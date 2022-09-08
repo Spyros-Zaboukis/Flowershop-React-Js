@@ -1,3 +1,5 @@
+import '../styles/Cart.css'
+
 function Cart(){
 
     let monsteraPrice = 8 ;
@@ -5,7 +7,7 @@ function Cart(){
     let bouquetDeFleurPrice = 15 ;
 
     return(
-        <div>
+        <div className='lmj-cart'>
             <ul>
                 <li>monstera : {monsteraPrice}€ </li>
                 <li>lierre : {lierrePrice}€ </li>

@@ -1,11 +1,11 @@
-import Header from './Header'
-import Description from './Description'
+import '../styles/Banner.css'
+import logo from '../assets/logo.png'
 
 function Banner(){
     return(
-        <div className='banner'>
-            <Header/>
-            <Description/>
+        <div className='lmj-banner'>
+            <img src={logo} alt="logo de la maison de la jungle" className='lmj-logo'/> 
+            <h1 className="lmj-title">La maison de la jungle</h1>
         </div>
     )
 }
