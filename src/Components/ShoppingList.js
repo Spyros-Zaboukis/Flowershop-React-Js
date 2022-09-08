@@ -1,4 +1,5 @@
 import { plantList } from '../datas/plantList'
+import '../styles/ShopingList.css'
 
 
 function ShoppingList(){
@@ -8,7 +9,6 @@ function ShoppingList(){
         (acc,plant) =>
         acc.includes(plant.category) ? acc : acc.concat(plant.category) , []
     )
-
 
     return(
         <div>
@@ -20,11 +20,16 @@ function ShoppingList(){
             ))}
         </ul>
 
-
         <ul>
-            { plantList.map((plant, index)=>(
-                <li key={`plantList-${plant.name}-${index}`} >{plant.name}</li>
-            )) }
+            {
+                plantList.map((plant, index) => (
+                
+                        <li key={plant.id}>{plant.name}
+                            {plant.isSpecialOffer && <span className='solde'> (Soldes) </span>}
+                        </li>
+                    )
+                )
+            }
         </ul>
 
 
