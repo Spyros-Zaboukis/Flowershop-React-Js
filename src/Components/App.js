@@ -2,6 +2,7 @@ import Banner from './Banner'
 import Cart from './Cart';
 import React from 'react';
 import ShoppingList from './ShoppingList';
+
 function App() {
 
   return (
@@ -9,6 +10,7 @@ function App() {
         <Banner/>
         <Cart/>
         <ShoppingList/>
+        
     </div>
   );
 }
