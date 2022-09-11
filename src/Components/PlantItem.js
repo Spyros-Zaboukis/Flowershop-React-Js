@@ -4,16 +4,13 @@ import p1 from '../assets/photos/p1.jpg'
 import CareScale from './CareScale'
 
 
-function HandleClick(plant){
-    console.log(`hello the plant is : ${plant}`);
-}
 
 
 
 function PlantItem(plant){
 
     return (
-             <li className="lmj-plant-item" key={plant.id} onClick={()=> HandleClick(plant.name)}>
+             <li className="lmj-plant-item" key={plant.id}>
 
             <img className="lmj-plant-item-cover" src= {p1} />
 
