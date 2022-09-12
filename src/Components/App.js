@@ -3,16 +3,22 @@ import Cart from './Cart';
 import React from 'react';
 import ShoppingList from './ShoppingList';
 import Footer from './Footer';
+import '../styles/Layout.css';
 
 function App() {
 
   return (
-    <div className="App">
+    <div>
+        
         <Banner/>
+
+       <div className='lmj-layout-inner'>
         <Cart/>
         <ShoppingList/>
+        </div>
+
         <Footer/>
-        
+
     </div>
   );
 }

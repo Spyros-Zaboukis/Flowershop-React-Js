@@ -2,6 +2,9 @@ import { plantList } from "../datas/plantList"
 import '../styles/Item.css'
 import p1 from '../assets/photos/p1.jpg'
 import CareScale from './CareScale'
+import '../styles/ShopingList.css'
+import '../styles/Cart.css'
+
 
 
 
