@@ -5,15 +5,9 @@ import '../styles/Cart.css'
 import React from 'react'
 
 
+function ShoppingList({cart , updateCart, catPlant}){
 
 
-function ShoppingList({cart , updateCart}){
-
-
-    const categoryPlant = plantList.reduce(
-        (acc,plant) =>
-        acc.includes(plant.category) ? acc : acc.concat(plant.category) , []
-    )
 
     function addToCart(name, price){
         const currentPlantAdded= cart.find((plant)=> plant.name === name )
@@ -27,35 +21,37 @@ function ShoppingList({cart , updateCart}){
         ])
     }
     else{
-        updateCart([... cart, {name , price , amount : 1}])
+        updateCart([...cart, {name , price , amount : 1}])
     }}
-
-
-
    
-    return(
+    return (
         <div>
-            <ul>
-                {categoryPlant.map((cat) => (
-                <li key={cat}>{cat}</li>
-                ))}
-            </ul>
-
             <ul className='lmj-plant-list' >
                 {
-                    plantList.map(({id, cover, name, water, light, price}) => (
-                                <div key={id}>
-                                    <PlantItem name={name} cover={cover} id={id} light={light} water={water} price={price}key={id}/>
-                                    <button onClick={() => addToCart(name, price)}>Ajouter</button>
-                                </div>
+                    plantList.map(({id, cover, name, water, light, price, category }) => (
+                       
+                        catPlant.catState==='default-value' ? (
+                            <li key={id}>
+                                        <PlantItem name={name} cover={cover} id={id} light={light} water={water} price={price}key={id} catPlant={catPlant}/>
+                                        <button onClick={() => addToCart(name, price)}>Ajouter</button>
+                                    </li>
+                        ) :
+                        
+                                category === catPlant.catState ? ( 
+                                    <li key={id}>
+                                        <PlantItem name={name} cover={cover} id={id} light={light} water={water} price={price}key={id} catPlant={catPlant}/>
+                                        <button onClick={() => addToCart(name, price)}>Ajouter</button>
+                                    </li>
+                                ) : null
+
+                                    
                         )
                     )
                 }
             </ul>
-
-
         </div>
     )
+
 }
 
 export default ShoppingList

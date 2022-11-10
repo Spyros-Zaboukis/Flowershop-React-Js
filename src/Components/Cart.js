@@ -1,5 +1,5 @@
 import '../styles/Cart.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Cart({cart , updateCart}){
 
@@ -8,6 +8,10 @@ function Cart({cart , updateCart}){
     const total = cart.reduce(
         (acc, plantType) => acc + plantType.amount * plantType.price, 0
     )
+
+    useEffect(()=>{
+        alert(`je vais devoir payer : ${total}`)
+    }, [total])
 
     return(
         isOpen ? (
@@ -21,7 +25,7 @@ function Cart({cart , updateCart}){
                     </div>   
             ))}
             <h3>Total : {total}€</h3>
-            <button onClick={() => updateCart([0]) }>Vider Le panier</button>
+            <button onClick={() => updateCart([]) }>Vider Le panier</button>
         </div>
         )
         :
@@ -30,6 +34,7 @@ function Cart({cart , updateCart}){
         )
         
     )
+    
 }
 
 export default Cart

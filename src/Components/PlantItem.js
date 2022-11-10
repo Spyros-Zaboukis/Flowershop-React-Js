@@ -9,23 +9,19 @@ import '../styles/Cart.css'
 
 
 
-function PlantItem(plant){
+function PlantItem(plant, catPlant){
 
     return (
-        <div>
+        <ul>
              <li className="lmj-plant-item" key={plant.id}>
-                <img className="lmj-plant-item-cover" src= {p1} alt='photoPlant' />     
+                <img className="lmj-plant-item-cover" src= {p1} alt='photoPlant' />
             </li>
 
             <p> {plant.name}<br/>
-                 prix : {plant.price}€ </p>
+                 prix : {plant.price}€</p>
                 <CareScale CareType="light" scaleValue={plant.light}/>
                 <CareScale CareType="water" scaleValue={plant.water}/>
-            </div>
-            
-          
-            
-    
+            </ul>       
     )
 }
 
